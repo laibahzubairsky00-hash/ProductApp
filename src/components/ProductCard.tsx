@@ -11,7 +11,12 @@ import {
 } from "react-native";
 import { verticalScale } from "react-native-size-matters";
 
-const ProductCard = ({ productTitle = "default", productPrice = "null" }) => {
+const ProductCard = ({
+  productTitle = "default",
+  productPrice = "null",
+  productImage = ["https://m.media-amazon.com/images/I/81a-oJGw2-L.jpg"],
+  productDescription = "nth",
+}) => {
   const navigation = useNavigation<any>();
 
   return (
@@ -20,12 +25,14 @@ const ProductCard = ({ productTitle = "default", productPrice = "null" }) => {
       onPress={() =>
         navigation.navigate("ProductDetail", {
           productTitle,
-          price: productPrice,
+          productPrice,
+          productImage,
+          productDescription,
         })
       }
     >
       <View>
-        <Image style={styles.Image} source={require("../../asset/prod1.png")} />
+        <Image style={styles.Image} source={{ uri: productImage[0] }} />
         <View style={styles.favouriteStyle}>
           <Entypo name="heart-outlined" size={24} color="black" />
         </View>
