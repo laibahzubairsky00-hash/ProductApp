@@ -17,7 +17,11 @@ const RootStack = () => {
     >
       <stack.Screen component={ProductList} name="ProductList"></stack.Screen>
       <stack.Screen component={ProductDetail} name="ProductDetail" />
-      <stack.Screen component={UserProfile} name="UserProfile" />
+      <stack.Screen
+        component={UserProfile}
+        name="UserProfile"
+        options={{ presentation: "modal" }}
+      />
     </stack.Navigator>
   );
 };
