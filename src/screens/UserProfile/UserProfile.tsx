@@ -6,12 +6,13 @@ import Entypo from "@expo/vector-icons/Entypo";
 import Feather from "@expo/vector-icons/Feather";
 import { useNavigation } from "expo-router";
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { BackHandler, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 const UserProfile = () => {
   const navigation = useNavigation<any>();
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <CustomHeader
         rightIcon={
           <Entypo name="dots-three-vertical" size={22} color="black" />
@@ -34,7 +35,7 @@ const UserProfile = () => {
             uri: "https://www.georgetown.edu/wp-content/uploads/2022/02/Jkramerheadshot-scaled-e1645036825432-1050x1050-c-default.jpg",
           }}
         />
-        <Text style={{ fontSize: 20, fontWeight: 700 }}>laiba zubair</Text>
+        <Text style={{ fontSize: 20, fontWeight: 700 }}>korean zubair</Text>
         <Text>laibaubair@outlook.com</Text>
       </View>
       <View
@@ -76,7 +77,13 @@ const UserProfile = () => {
           <AntDesign name="right" size={24} color="black" />
         </View>
       </View>
-      <CustomButton onPressButton ={()=> }
+      <View style={{ flex: 1, justifyContent: "flex-end" }}>
+        <CustomButton
+          onPressButton={() => BackHandler.exitApp()}
+          containerStyle={{ backgroundColor: "purple" }}
+          buttonTitle="Logout"
+        />
+      </View>
     </SafeAreaView>
   );
 };

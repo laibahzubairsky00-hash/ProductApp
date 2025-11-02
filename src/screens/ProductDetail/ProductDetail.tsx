@@ -35,7 +35,6 @@ const ProductDetail = ({ route }) => {
       <FlatList
         style={{
           marginHorizontal: screenWidth(6),
-          backgroundColor: "blue",
           flexGrow: 0,
           borderRadius: 40,
         }}
